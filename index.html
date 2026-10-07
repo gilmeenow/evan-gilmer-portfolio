@@ -1,551 +1,907 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional portfolio website for Evan L. Gilmer, a program management, marketing, and analytics professional based in New York." />
-  <title>Evan L. Gilmer | Marketing, Analytics & Program Management</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Evan Gilmer · Product Marketing for Digital Health</title>
+<meta name="description" content="Product marketing manager in New York. I turn behavioral research into segments, positioning, and launch plans for digital health. Case studies: MedCASH, SBIRT app, TPA-8, Healthy Hearts & Kidneys.">
+<link rel="canonical" href="https://gilmeenow.github.io/evan-gilmer-portfolio/">
+<meta name="theme-color" content="#0B0F17">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Evan Gilmer · Product Marketing for Digital Health">
+<meta property="og:description" content="Product marketing manager in New York. I turn behavioral research into segments, positioning, and launch plans for digital health. Case studies: MedCASH, SBIRT app, TPA-8, Healthy Hearts & Kidneys.">
+<meta property="og:url" content="https://gilmeenow.github.io/evan-gilmer-portfolio/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0F17'/%3E%3Cpath d='M18 18h20M18 32h16M18 46h20M18 18v28' stroke='%23F8FAFC' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='47' cy='45' r='5' fill='%2334D399'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* Layout: dark "obsidian" single-theme page; sticky glass nav, metric bar, tabbed flagship, bento grid that opens case files, three pillars, about + contact */
+:root{
+  color-scheme:dark;
+  --obsidian:#0B0F17; --surface:#151A23; --surface-2:#1E2532; --line:#2D3748; --line-soft:rgba(45,55,72,.6);
+  --text:#CBD5E1; --muted:#94A3B8; --faint:#8090A6; --white:#F8FAFC;
+  --mint-100:#D1FAE5; --mint-200:#A7F3D0; --rose-100:#FFE4E6; --indigo-100:#E0E7FF; --slate-600:#475569;
+  --indigo-300:#A5B4FC; --indigo-400:#818CF8; --indigo-500:#6366F1; --indigo-600:#4F46E5;
+  --emerald-300:#6EE7B7; --emerald-400:#34D399; --emerald-500:#10B981;
+  --coral:#FF7A62; --rose-400:#FB7185; --amber:#FBBF24;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Inter", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --dur-fast:.2s; --dur:.35s;
+  --r-sm:10px; --r-md:14px; --r-lg:18px; --r-xl:24px;
+  --nav-h:72px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+img,svg{max-width:100%}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{margin:0;background:var(--obsidian);color:var(--text);font-family:var(--f-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--indigo-500);color:#fff}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;color:var(--white);text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--indigo-400);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.mono{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo-400);font-weight:600;display:flex;align-items:center;gap:8px}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--emerald-400)}
+.shead-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+section{padding-block:clamp(64px,9vw,112px);border-bottom:1px solid var(--line-soft);position:relative}
+section.last{border-bottom:0}
+.h2{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.05;letter-spacing:-.02em}
+.lead{color:var(--muted);max-width:60ch}
+.grad{background:linear-gradient(90deg,var(--indigo-400),var(--indigo-300) 45%,var(--emerald-400));-webkit-background-clip:text;background-clip:text;color:transparent}
+svg.ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0D87L2SH6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F0D87L2SH6');
-  </script>
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(21,26,35,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--f-display);font-weight:800;font-size:1.35rem;letter-spacing:-.01em;color:var(--white);text-decoration:none;transition:color .2s}
+.brand span{color:var(--indigo-500)}
+.brand:hover{color:var(--indigo-400)}
+.nav-links{display:flex;gap:32px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--text);transition:color .2s}
+.nav-links a{position:relative;padding-block:8px}
+.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--white)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--emerald-400);transform:scaleX(0);transform-origin:left;transition:transform var(--dur) var(--ease)}
+.nav-links a[aria-current="true"]::after{transform:scaleX(1)}
+.cta-ring{position:relative;display:inline-flex;border-radius:10px;padding:1px;text-decoration:none;background:linear-gradient(90deg,var(--indigo-500),var(--emerald-400))}
+.cta-ring span{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;background:var(--obsidian);color:var(--white);font-family:var(--f-mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .25s}
+.cta-ring:hover span{background:rgba(11,15,23,.7)}
+.cta-ring b{color:var(--indigo-400);font-weight:700}
+.menu-btn{display:none;background:none;border:0;color:var(--muted);padding:9px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer;border-radius:8px}
+.menu-btn:hover{color:var(--white)}
+.menu-btn svg{width:26px;height:26px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+.mobile-menu{border-top:1px solid var(--line);background:var(--surface);padding:16px clamp(16px,4vw,32px) 24px;display:grid;gap:14px;font-family:var(--f-mono);font-size:.84rem;text-transform:uppercase;letter-spacing:.06em}
+.mobile-menu a{text-decoration:none;display:flex;align-items:center;min-height:44px}
+.mobile-menu .solid{justify-content:center;text-align:center;background:var(--indigo-600);color:#fff;padding:12px;border-radius:10px;font-weight:700}
+@media (max-width:860px){.nav-links,.nav .cta-ring{display:none}.menu-btn{display:inline-flex}}
 
-  <style>
-    :root {
-      --bg: #f7f5ef;
-      --surface: #ffffff;
-      --surface-soft: #eeebe2;
-      --text: #22211d;
-      --muted: #666258;
-      --border: rgba(34, 33, 29, 0.12);
-      --primary: #1f6f68;
-      --primary-dark: #164f4b;
-      --primary-soft: #dcebea;
-      --shadow: 0 18px 45px rgba(34, 33, 29, 0.08);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 999px;
-      --max: 1120px;
-    }
+/* Hero */
+.hero{padding-block:clamp(48px,8vw,104px) clamp(56px,8vw,112px);overflow:hidden}
+.glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(110px)}
+.glow.a{width:min(600px,90vw);height:350px;left:50%;top:22%;transform:translate(-50%,-50%);background:rgba(79,70,229,.14)}
+.glow.b{width:300px;height:300px;right:4%;top:30%;background:rgba(16,185,129,.1)}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;gap:40px}
+@media (min-width:1080px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:56px;align-items:end}.hero-grid .ctas{margin-bottom:0}}
+.live-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:24px;display:grid;gap:18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);animation:up .8s .28s var(--ease) both}
+@media (max-width:1079px){.live-card{max-width:600px}}
+.lc-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 12px}
+.live{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:var(--emerald-400);font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--emerald-400)}
+.lc-name{font-family:var(--f-display);font-weight:800;font-size:1.35rem;color:var(--white);letter-spacing:-.01em}
+.lc-pos{font-family:var(--f-mono);font-size:.84rem;line-height:1.55;color:var(--mint-200);background:rgba(6,78,59,.2);border:1px solid rgba(16,185,129,.3);border-radius:var(--r-sm);padding:12px 14px}
+.lc-k{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.lc-map{list-style:none;margin:-8px 0 0;padding:0;display:grid}
+.lc-map li{display:flex;justify-content:space-between;gap:12px;padding-block:9px;border-top:1px solid var(--line);font-size:.88rem}
+.lc-map b{font-family:var(--f-mono);font-size:.74rem;font-weight:500;color:var(--indigo-300);white-space:nowrap}
+.lc-link{justify-self:start;display:inline-flex;align-items:center;gap:8px;min-height:40px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--indigo-400);text-decoration:none}
+.lc-link:hover{color:var(--indigo-300)}
+.lc-link .arr{transition:transform var(--dur) var(--ease)}
+.lc-link:hover .arr{transform:translateX(4px)}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-family:var(--f-mono);font-size:.74rem;letter-spacing:.03em;color:var(--text);margin-bottom:32px;animation:up .7s var(--ease) both}
+.ping{position:relative;width:8px;height:8px;border-radius:50%;background:var(--emerald-500)}
+.ping::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--emerald-400);animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.4);opacity:0}}
+.hero h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.06;letter-spacing:-.025em;max-width:17ch;margin-bottom:24px;animation:up .8s .08s var(--ease) both}
+.hero .sub{font-size:clamp(1.05rem,1.8vw,1.25rem);font-weight:300;color:var(--muted);max-width:58ch;margin-bottom:40px;animation:up .8s .16s var(--ease) both}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:0;animation:up .8s .24s var(--ease) both}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:12px;font-weight:600;font-size:.92rem;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--f-body);transition:background .2s,transform .2s,border-color .2s}
+.btn.primary{background:var(--indigo-600);color:#fff;box-shadow:0 12px 30px -10px rgba(79,70,229,.45)}
+.btn.primary:hover{background:var(--indigo-500)}
+.btn:active,.mini:active,.r-btn:active{transform:scale(.98)}
+.btn.ghost{background:var(--surface);border-color:var(--line);color:var(--text)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn.primary:hover .arr{transform:translateY(2px)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:clamp(48px,6vw,72px);padding-top:32px;border-top:1px solid var(--line-soft);animation:up .8s .32s var(--ease) both}
+.metric{background:rgba(21,26,35,.8);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:6px;align-content:start}
+.metric b{font-family:var(--f-mono);font-weight:700;font-size:clamp(1.8rem,3vw,2.3rem);line-height:1;font-variant-numeric:tabular-nums}
+.metric:nth-child(odd) b{color:var(--emerald-400)}
+.metric:nth-child(even) b{color:var(--indigo-400)}
+.metric span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.metric small{font-size:.8rem;color:var(--faint)}
+@media (max-width:980px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.metrics{gap:10px}.metric{padding:16px}.ctas .btn{flex:1 1 100%;justify-content:center}}
+@media (max-width:339px){.metrics{grid-template-columns:minmax(0,1fr)}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
 
-    [data-theme="dark"] {
-      --bg: #141414;
-      --surface: #1f1f1d;
-      --surface-soft: #292925;
-      --text: #f4f1e9;
-      --muted: #c6c0b3;
-      --border: rgba(244, 241, 233, 0.14);
-      --primary: #7cc8c1;
-      --primary-dark: #a3dbd5;
-      --primary-soft: #203735;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
-    }
+/* Section head */
+.shead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:clamp(32px,5vw,48px)}
+.shead>div{display:grid;gap:10px}
+.shead .side{color:var(--muted);font-size:.92rem;max-width:42ch}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* Flagship */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.ftabs{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);background:rgba(11,15,23,.4)}
+.ftab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:16px 22px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;transition:color .2s,background .2s,border-color .2s}
+.ftab:hover{color:var(--white)}
+.ftab[aria-selected="true"]{border-bottom-color:var(--indigo-500);color:var(--white);background:var(--surface)}
+.ftab svg.ic{width:16px;height:16px}
+.ftab:focus-visible{outline-offset:-3px}
+@media (max-width:860px){.ftabs{-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)}.ftabs.end{-webkit-mask-image:none;mask-image:none}}
+.fpane{padding:clamp(20px,4vw,40px)}
+.fpane:not([hidden]){animation:fade .35s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,32px)}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.two,.three{grid-template-columns:minmax(0,1fr)}}
+.stack{display:grid;gap:16px;align-content:start;min-width:0}
+.h3{font-family:var(--f-display);font-weight:700;font-size:1.5rem;line-height:1.15}
+.body-sm{font-size:.94rem;line-height:1.65;color:var(--text)}
+.inset{background:rgba(11,15,23,.6);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:6px}
+.inset .k{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--indigo-400)}
+.inset p{color:var(--white);font-weight:500;font-size:.94rem}
+.shift{background:var(--obsidian);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:16px;align-content:start}
+.shift .t{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--line)}
+.pill{display:inline-block;padding:2px 8px;border-radius:5px;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em}
+.pill.before{background:rgba(251,113,133,.1);color:var(--rose-400);border:1px solid rgba(251,113,133,.25)}
+.pill.after{background:rgba(52,211,153,.1);color:var(--emerald-400);border:1px solid rgba(52,211,153,.25)}
+.q-before{font-family:var(--f-mono);font-size:.84rem;color:var(--muted);background:rgba(21,26,35,.5);border:1px solid var(--line-soft);border-radius:10px;padding:12px 14px;margin-top:8px}
+.q-after{font-family:var(--f-mono);font-size:.84rem;color:var(--mint-200);background:rgba(6,78,59,.2);border:1px solid rgba(16,185,129,.3);border-radius:10px;padding:12px 14px;margin-top:8px}
+.rows{margin:0;display:grid}
+.rows div{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:14px;padding-block:11px;border-top:1px solid var(--line)}
+.rows dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.rows dd{margin:0;font-size:.92rem;color:var(--text)}
+@media (max-width:480px){.rows div{grid-template-columns:minmax(0,1fr);gap:2px}}
+.gcard{background:rgba(11,15,23,.6);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:10px;align-content:start}
+.icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;margin-bottom:6px}
+.icon.i{background:rgba(99,102,241,.12);color:var(--indigo-400)}
+.icon.e{background:rgba(16,185,129,.12);color:var(--emerald-400)}
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 96px;
-    }
+.gcard h4{font-family:var(--f-display);font-size:1.15rem;font-weight:700}
+.gcard p{font-size:.88rem;color:var(--muted);line-height:1.6}
+.phases{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.phases li{padding:16px 18px;display:grid;gap:4px;background:rgba(11,15,23,.4)}
+.phases li+li{border-left:1px solid var(--line)}
+.phases b{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald-400);font-weight:500}
+.phases span{font-size:.9rem}
+@media (max-width:700px){.phases{grid-template-columns:minmax(0,1fr)}.phases li+li{border-left:0;border-top:1px solid var(--line)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font-family:var(--f-mono);font-size:.72rem;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--text);background:rgba(11,15,23,.5)}
+.matrix-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table.mx{width:100%;min-width:760px;border-collapse:collapse;font-size:.88rem}
+.mx th{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:left;padding:12px 16px;background:rgba(11,15,23,.6);border-bottom:1px solid var(--line)}
+.mx td{padding:16px;vertical-align:top;border-top:1px solid var(--line);color:var(--text)}
+.mx tr:hover td{background:rgba(30,37,50,.5)}
+.mx td:first-child{color:var(--white);font-weight:600}
+.mx .tier{font-family:var(--f-mono);font-size:.72rem;color:var(--indigo-300);white-space:nowrap}
+.mx .msg{color:var(--mint-200);font-family:var(--f-mono);font-size:.82rem}
+.note{font-size:.82rem;color:var(--faint);margin-top:12px}
+.deliv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.deliv li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(11,15,23,.5);font-size:.9rem}
+.deliv li::before{content:"";flex:none;width:8px;height:8px;margin-top:8px;border-radius:2px;background:var(--emerald-400)}
+@media (max-width:600px){.deliv{grid-template-columns:minmax(0,1fr)}}
+.status{border-left:3px solid var(--emerald-400);background:rgba(11,15,23,.6);border-radius:0 16px 16px 0;padding:18px 22px;font-size:.94rem}
+.status b{display:block;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
+.scope{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.scope div{background:var(--surface);padding:14px 18px;display:grid;gap:4px}
+.scope .k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald-400)}
+.scope div+div .k{color:var(--indigo-400)}
+.scope p{font-size:.9rem}
+@media (max-width:640px){.scope{grid-template-columns:minmax(0,1fr)}}
 
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(31, 111, 104, 0.12), transparent 32rem),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:1000px){.bento{grid-template-columns:minmax(0,1fr)}}
+.bcard{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transition:background .3s,border-color .3s,transform .4s var(--ease)}
+.bcard:hover{background:var(--surface-2);border-color:rgba(99,102,241,.5)}
+.bcard.active{border-color:var(--indigo-500);background:var(--surface-2);box-shadow:0 0 0 1px var(--indigo-500) inset}
+.btop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.tagp{font-family:var(--f-mono);font-size:.72rem;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.tagp.e{color:var(--emerald-400);background:rgba(6,78,59,.35);border:1px solid rgba(6,95,70,.6)}
+.tagp.i{color:var(--indigo-400);background:rgba(30,27,75,.5);border:1px solid rgba(55,48,163,.6)}
+.bcard h3{font-family:var(--f-display);font-weight:700;font-size:1.45rem;line-height:1.2;margin-bottom:10px;transition:color .25s}
+.bcard:hover h3{color:var(--indigo-300)}
+.bcard p{font-size:.92rem;color:var(--muted)}
+.open{appearance:none;background:none;border:0;padding:12px 0;margin-block:-12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--indigo-400);align-self:flex-start}
+.open:hover{color:var(--indigo-300)}
+.open .arr{transition:transform .3s var(--ease)}
+.bcard:hover .open .arr{transform:translateX(4px)}
+.open[aria-expanded="true"] .arr{transform:rotate(90deg)}
+.casefile{margin-top:24px;background:var(--surface);border:1px solid var(--indigo-500);border-radius:24px;padding:clamp(20px,4vw,40px);display:grid;gap:28px}
+.casefile:not([hidden]){animation:fade .4s var(--ease)}
+.cf-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;align-items:flex-end}
+.cf-head h3{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.1;letter-spacing:-.015em}
+.cf-head .src{font-size:.8rem;color:var(--faint);max-width:44ch}
+.snap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0}
+.snap div{background:rgba(11,15,23,.7);padding:14px 16px;display:grid;gap:4px;align-content:start;min-width:0}
+.snap dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--indigo-400)}
+.snap dd{margin:0;font-size:.88rem;line-height:1.45}
+@media (max-width:1000px){.snap{grid-template-columns:repeat(2,minmax(0,1fr))}.snap div:last-child{grid-column:1/-1}}
+@media (max-width:520px){.snap{grid-template-columns:minmax(0,1fr)}}
+.beats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.beat{display:grid;gap:8px;align-content:start;padding:18px 20px;border-radius:16px;background:rgba(11,15,23,.55);border:1px solid var(--line)}
+.beat h4{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.beat h4 span{color:var(--indigo-400);margin-right:6px}
+.beat p{font-size:.92rem}
+.beat strong{color:var(--emerald-400);font-weight:600}
+.k-num{white-space:nowrap;font-family:var(--f-mono);font-size:.84rem;color:var(--white);background:rgba(99,102,241,.18);padding:0 5px;border-radius:4px}
+@media (max-width:900px){.beats{grid-template-columns:minmax(0,1fr)}}
+.box{background:rgba(11,15,23,.55);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:16px;align-content:start;min-width:0}
+.box>h4{font-family:var(--f-display);font-size:1.15rem;font-weight:700}
+.htag{justify-self:start;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(99,102,241,.15);color:var(--indigo-300);border:1px solid rgba(99,102,241,.35)}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* Charts */
+.hbars{display:grid;gap:12px}
+.hrow{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr) 3.4rem;gap:12px;align-items:center;font-size:.86rem}
+.htrack{position:relative;height:14px;border-radius:4px;background:var(--surface-2)}
+.hfill{position:absolute;inset:0 auto 0 0;width:calc(var(--v) * 1%);border-radius:4px;background:var(--indigo-500)}
+.hfill.e{background:var(--emerald-500)}
+.hfill.m{background:var(--slate-600)}
+.hrow b{font-family:var(--f-mono);font-weight:500;text-align:right;font-variant-numeric:tabular-nums;color:var(--white)}
+.bench{position:absolute;top:-6px;bottom:-6px;left:70%;border-left:2px dashed var(--coral)}
+.axis{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr) 3.4rem;gap:12px}
+.ticks{position:relative;height:16px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:.68rem;color:var(--faint)}
+.ticks span{position:absolute;top:3px;transform:translateX(-50%)}
+.ticks span:first-child{transform:none}.ticks span:last-child{transform:translateX(-100%)}
+.chart-k{color:var(--muted);font-size:.68rem}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:0;border-top:2px dashed var(--coral);vertical-align:middle;margin-right:6px}
+@media (max-width:560px){.hrow,.axis{grid-template-columns:minmax(0,1fr) 3rem}.hrow>span:first-child{grid-column:1/-1}.axis>span:first-child{display:none}.axis{grid-template-columns:minmax(0,1fr) 3rem}}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:4px;background:var(--surface)}
+.tile b{font-family:var(--f-mono);font-size:1.4rem;color:var(--emerald-400);font-variant-numeric:tabular-nums}
+.tile span{font-size:.78rem;color:var(--muted);line-height:1.35}
+@media (max-width:640px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.quote{margin:0;padding:14px 16px;border-radius:12px;font-size:.92rem;line-height:1.5}
+.quote.pos{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:var(--mint-100)}
+.quote.neg{background:rgba(251,113,133,.07);border:1px solid rgba(251,113,133,.25);color:var(--rose-100)}
+.quote cite{display:block;margin-top:8px;font-style:normal;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+ul.plain{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:.9rem}
+.press{border-left:3px solid var(--indigo-500);padding:4px 0 4px 16px;display:grid;gap:6px}
+.press blockquote{margin:0;font-size:1.05rem;font-style:italic;color:var(--white)}
+.press figcaption{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tlink{display:inline-block;padding-block:4px;color:var(--indigo-400);text-decoration:none;border-bottom:1px solid currentColor;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.tlink:hover{color:var(--indigo-300)}
+.grid2x2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cell{border-radius:12px;padding:14px;display:grid;gap:4px;align-content:start;min-height:100px;border:1px solid var(--line);background:var(--surface)}
+.cell b{font-family:var(--f-mono);font-size:.82rem;letter-spacing:.06em;color:var(--white)}
+.cell span{font-size:.82rem;color:var(--muted);line-height:1.4}
+.cell.c1{border-color:rgba(16,185,129,.35)}
+.cell.c2{border-color:rgba(99,102,241,.35)}
+.cell.c3{background:rgba(79,70,229,.25);border-color:var(--indigo-500)}
+.axes{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px;font-size:.9rem}
+.mail .from{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pipe{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.pipe li{padding:14px 18px 14px 26px;display:grid;gap:2px;color:var(--white);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,12px 50%)}
+.pipe li:first-child{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%);padding-left:16px;border-radius:10px 0 0 10px}
+.pipe li:nth-child(1){background:rgba(99,102,241,.18)}
+.pipe li:nth-child(2){background:rgba(99,102,241,.32)}
+.pipe li:nth-child(3){background:rgba(99,102,241,.5)}
+.pipe li:nth-child(4){background:var(--indigo-600)}
+.pipe b{font-family:var(--f-mono);font-size:1.6rem;line-height:1}
+.pipe span{font-size:.8rem;color:var(--indigo-300)}
+.pipe li:nth-child(4) span{color:var(--indigo-100)}
+@media (max-width:640px){.pipe{grid-template-columns:repeat(2,minmax(0,1fr))}.pipe li,.pipe li:first-child{clip-path:none;border-radius:10px;padding:12px 14px}}
+.themes{display:grid}
+.theme{border-top:1px solid var(--line)}
+.theme:last-child{border-bottom:1px solid var(--line)}
+.theme summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:5rem minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 4px;border-radius:8px}
+.theme summary::-webkit-details-marker{display:none}
+.theme summary .mono{color:var(--faint);font-size:.68rem}
+.theme summary strong{font-family:var(--f-display);font-size:1.12rem;color:var(--white);font-weight:700;transition:color .2s}
+.theme summary:hover strong{color:var(--indigo-300)}
+.pm{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .4s var(--ease),background .3s,border-color .3s}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:2px;margin:-1px 0 0 -5px;background:var(--text);transition:transform .4s var(--ease)}
+.pm::after{transform:rotate(90deg)}
+.theme[open] .pm{background:var(--indigo-600);border-color:var(--indigo-600);transform:rotate(180deg)}
+.theme[open] .pm::after{transform:rotate(0)}
+.tbody{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;padding:0 4px 18px calc(5rem + 16px)}
+.theme[open] .tbody{animation:fade .35s var(--ease)}
+.tbody blockquote{margin:0;font-size:.98rem;color:var(--white);line-height:1.5}
+.tbody blockquote::before{content:"\201C";color:var(--indigo-400);font-family:var(--f-display);font-size:1.6em;line-height:0;vertical-align:-.3em;margin-right:2px}
+.tbody .heard{color:var(--muted);font-size:.86rem;margin-top:8px}
+.impl{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:12px 14px;font-size:.88rem;color:var(--mint-100);display:grid;gap:4px;align-content:start}
+.impl .k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald-400)}
+@media (max-width:720px){.theme summary{grid-template-columns:minmax(0,1fr) auto}.theme summary .mono{grid-column:1/-1}.tbody{grid-template-columns:minmax(0,1fr);padding-left:4px}}
+.bridge{display:grid;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.brow{display:grid;grid-template-columns:minmax(0,1fr) 2rem minmax(0,1fr);gap:10px;align-items:center;padding:12px 16px;border-top:1px solid var(--line);font-size:.9rem}
+.brow:first-child{border-top:0;background:rgba(11,15,23,.6);font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.brow .ar{color:var(--emerald-400);text-align:center}
+.brow small{display:block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--indigo-400)}
+@media (max-width:640px){.brow{grid-template-columns:minmax(0,1fr)}.brow .ar{text-align:left;transform:rotate(90deg);width:1rem}.brow:first-child{display:none}}
 
-    .skip-link {
-      position: absolute;
-      left: 1rem;
-      top: -4rem;
-      background: var(--primary);
-      color: white;
-      padding: 0.7rem 1rem;
-      border-radius: var(--radius-sm);
-      z-index: 999;
-    }
+/* Scorer */
+.scorer{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:20px;align-items:start}
+@media (max-width:900px){.scorer{grid-template-columns:minmax(0,1fr)}}
+.items{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
+.items-lead{padding:12px 16px;background:rgba(11,15,23,.6);border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.q{border:0;margin:0;padding:14px 16px 16px;border-top:1px solid var(--line);min-width:0}
+.items-lead+.q{border-top:0}
+.q legend{float:left;width:100%;padding:0;margin-bottom:10px;font-weight:500;font-size:.92rem;color:var(--white);line-height:1.45}
+.q legend .n{font-family:var(--f-mono);font-size:.72rem;color:var(--faint);margin-right:8px}
+.tag{display:inline-block;margin-left:8px;padding:1px 7px;border-radius:999px;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;font-weight:400;vertical-align:2px}
+.tag.s{background:rgba(251,113,133,.12);color:var(--rose-400)}
+.tag.p{background:rgba(99,102,241,.15);color:var(--indigo-300)}
+.opts{clear:both;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.opts input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.opts label{display:flex;align-items:center;justify-content:center;min-height:42px;border:1px solid var(--line);border-radius:9px;padding:6px 8px;text-align:center;font-size:.8rem;line-height:1.2;cursor:pointer;color:var(--text);transition:background .2s,color .2s,border-color .2s}
+.opts label:hover{border-color:var(--indigo-400)}
+.opts input:checked+label{background:var(--indigo-600);border-color:var(--indigo-600);color:#fff}
+.opts input:focus-visible+label{outline:2px solid var(--indigo-400);outline-offset:2px}
+@media (max-width:560px){.opts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.results{position:sticky;top:calc(env(safe-area-inset-top,0px) + 88px);background:var(--obsidian);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:18px}
+@media (max-width:900px){.results{position:static}}
+.r-total{display:flex;align-items:baseline;gap:8px}
+.r-total b{font-family:var(--f-mono);font-size:3.4rem;line-height:.9;color:var(--emerald-400);font-variant-numeric:tabular-nums}
+.r-total span{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.r-meter{display:grid;gap:6px}
+.r-label{display:flex;justify-content:space-between;gap:8px;font-size:.88rem}
+.r-label b{font-family:var(--f-mono);font-weight:500;color:var(--white);font-variant-numeric:tabular-nums}
+.track{position:relative;height:10px;border-radius:5px;background:var(--surface-2)}
+.fill{position:absolute;inset:0 auto 0 0;width:calc(var(--p,0) * 100%);border-radius:5px;background:var(--rose-400);transition:width .55s var(--ease)}
+.r-meter.prog .fill{background:var(--indigo-500)}
+.mean{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;border-radius:2px;background:var(--amber);left:calc(var(--m) * 100%)}
+.ends{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.68rem;color:var(--faint)}
+.key{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted)}
+.key i{width:3px;height:14px;border-radius:2px;background:var(--amber)}
+.r-note{font-size:.78rem;line-height:1.5;color:var(--faint);padding-top:12px;border-top:1px solid var(--line)}
+.r-btn{justify-self:start;appearance:none;min-height:40px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+.r-btn:hover{background:var(--surface-2)}
 
-    .skip-link:focus {
-      top: 1rem;
-    }
+/* Pillars */
+.center{text-align:center;max-width:46rem;margin:0 auto clamp(40px,6vw,64px);display:grid;gap:14px;justify-items:center}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:900px){.pillars{grid-template-columns:minmax(0,1fr)}}
+.pillar{background:rgba(21,26,35,.5);border:1px solid var(--line);border-radius:24px;padding:32px;display:grid;gap:12px;align-content:start}
+.pillar .n{font-family:var(--f-mono);font-size:2.2rem;font-weight:700;line-height:1}
+.pillar .n{color:var(--indigo-400)}
+.pillar:nth-child(2) .n{color:var(--emerald-400)}
+.pillar h3{font-family:var(--f-display);font-size:1.25rem;font-weight:700}
+.pillar p{font-size:.92rem;color:var(--muted)}
+.pillar .proof{font-family:var(--f-mono);font-size:.7rem;color:var(--indigo-300);letter-spacing:.04em}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
+/* About */
+.about{background:linear-gradient(90deg,var(--surface),var(--surface) 55%,var(--obsidian));border:1px solid var(--line);border-radius:24px;padding:clamp(24px,5vw,64px);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}
+.about .stack>p:not(.eyebrow){font-size:1rem;color:var(--text);max-width:60ch}
+.arc{list-style:none;margin:8px 0 0;padding:0;display:grid}
+.arc li{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:10px;padding-block:12px;border-top:1px solid var(--line);font-size:.9rem}
+.arc li span{font-family:var(--f-mono);font-size:.72rem;color:var(--indigo-400);padding-top:2px}
+.arc b{color:var(--white);font-weight:600}
+.contact{display:grid;gap:12px}
+.ci{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:rgba(11,15,23,.6);display:grid;gap:6px}
+.ci .k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ci .v{color:var(--white);font-weight:500;overflow-wrap:anywhere;user-select:all}
+.ci .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.mini{appearance:none;display:inline-flex;align-items:center;min-height:40px;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
+.mini:hover{background:var(--surface-2);border-color:var(--indigo-500)}
+.mini.solid{background:var(--indigo-600);border-color:var(--indigo-600);color:#fff}
+.mini.solid:hover{background:var(--indigo-500)}
+.pubs{margin-top:clamp(28px,4vw,40px);display:grid;gap:0}
+.pubs h3{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo-400);margin-bottom:10px}
+.pubs li{display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:12px;padding-block:12px;border-top:1px solid var(--line);font-size:.9rem}
+.pubs ul{list-style:none;margin:0;padding:0}
+.pubs .yr{font-family:var(--f-mono);font-size:.76rem;color:var(--emerald-400);padding-top:2px}
+.pubs .pt{color:var(--white)}
+.pubs .pm2{color:var(--muted);font-size:.82rem;display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;padding:10px 16px;border-radius:var(--r-sm);background:var(--indigo-600);color:#fff;font-weight:600;text-decoration:none;transition:top var(--dur-fast)}
+.skip:focus{top:12px}
+main:focus{outline:none}
 
-    .nav {
-      width: min(100% - 2rem, var(--max));
-      margin: 0 auto;
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
+/* Footer */
+footer{padding-block:30px;font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px}
+footer nav{display:flex;gap:24px}
+footer a{text-decoration:none;display:inline-block;padding-block:10px}
+footer a:hover{color:var(--indigo-400)}
 
-    .brand {
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    nav a,
-    .theme-toggle {
-      font-size: 0.92rem;
-      color: var(--muted);
-      padding: 0.55rem 0.8rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid transparent;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    nav a:hover,
-    .theme-toggle:hover {
-      color: var(--text);
-      background: var(--surface-soft);
-    }
-
-    main {
-      width: min(100% - 2rem, var(--max));
-      margin: 0 auto;
-    }
-
-    section {
-      padding: clamp(3.25rem, 8vw, 5.75rem) 0;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 1.25rem;
-      align-items: stretch;
-      padding-top: clamp(4rem, 8vw, 7rem);
-    }
-
-    .hero-card,
-    .card {
-      background: color-mix(in srgb, var(--surface) 94%, transparent);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: clamp(2rem, 5vw, 4.25rem);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 0.65rem;
-      height: 0.65rem;
-      border-radius: 999px;
-      background: var(--primary);
-      box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 16%, transparent);
-    }
-
-    h1 {
-      max-width: 820px;
-      font-size: clamp(2.45rem, 7vw, 5.4rem);
-      line-height: 0.95;
-      letter-spacing: -0.07em;
-      margin-bottom: 1.35rem;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4.5vw, 3.5rem);
-      line-height: 1;
-      letter-spacing: -0.055em;
-      margin-bottom: 1rem;
-      max-width: 760px;
-    }
-
-    h3 {
-      font-size: 1.15rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.55rem;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .lead {
-      max-width: 760px;
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-      margin-bottom: 1.4rem;
-    }
-
-    .positioning {
-      margin-top: 1.8rem;
-      padding-top: 1.8rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .positioning strong {
-      display: block;
-      margin-bottom: 0.55rem;
-      font-size: 1rem;
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 1.25rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 2.15rem;
-      padding: 0.45rem 0.82rem;
-      border-radius: var(--radius-sm);
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 0.82rem;
-      font-weight: 750;
-    }
-
-    .side-card {
-      padding: 1.25rem;
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .metric {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-    }
-
-    .metric strong {
-      display: block;
-      color: var(--text);
-      font-size: clamp(1.8rem, 4vw, 2.75rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 0.35rem;
-    }
-
-    .section-head {
-      margin-bottom: 1.6rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .card {
-      padding: 1.45rem;
-    }
-
-    .card p {
-      font-size: 0.98rem;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 1rem;
-      align-items: stretch;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: center;
-      padding: 1rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      background: var(--surface);
-    }
-
-    .contact-link span:first-child {
-      font-weight: 760;
-    }
-
-    .contact-link span:last-child {
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-align: right;
-    }
-
-    footer {
-      width: min(100% - 2rem, var(--max));
-      margin: 0 auto;
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 860px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 1rem 0;
-      }
-
-      nav {
-        justify-content: flex-start;
-      }
-
-      .hero,
-      .contact,
-      .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        padding: 2rem;
-      }
-    }
-
-    @media (max-width: 520px) {
-      main,
-      .nav,
-      footer {
-        width: min(100% - 1.1rem, var(--max));
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .contact-link {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .contact-link span:last-child {
-        text-align: left;
-      }
-    }
-  </style>
+@media (max-width:560px){
+  .fpane{padding:16px}
+  .casefile{padding:18px 14px;gap:22px;border-radius:var(--r-lg)}
+  .box{padding:16px 14px;border-radius:var(--r-md)}
+  .shift,.gcard{padding:16px}
+  .bcard{padding:22px}
+  .about{border-radius:var(--r-lg)}
+}
+@media (min-width:901px){.about .contact{position:sticky;top:calc(var(--nav-h) + 24px)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+</style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="top">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Evan Gilmer, product marketing manager. Back to top">EVAN GILMER <span aria-hidden="true">/</span> PMM</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#flagship">MedCASH launch</a>
+      <a href="#work">Case files</a>
+      <a href="#frameworks">Approach</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="cta-ring" href="#contact"><span>Let's talk <b aria-hidden="true">→</b></span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#flagship">MedCASH launch</a>
+    <a href="#work">Case files</a>
+    <a href="#frameworks">Approach</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="solid">Let's talk</a>
+  </div>
+</header>
 
-  <header>
-    <div class="nav">
-      <a class="brand" href="#top">Evan L. Gilmer</a>
-      <nav aria-label="Primary navigation">
-        <a href="#strengths">Strengths</a>
-        <a href="#impact">Impact</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-toggle" type="button" data-theme-toggle>Dark mode</button>
-      </nav>
+<main id="main" tabindex="-1">
+  <section class="hero">
+    <div class="glow a" aria-hidden="true"></div>
+    <div class="glow b" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="badge"><span class="ping" aria-hidden="true"></span>Open to product marketing manager roles · New York</p>
+      <div class="hero-grid">
+        <div>
+          <h1>I turn behavioral research into positioning that clinicians, patients, and buyers <span class="grad">get at a glance.</span></h1>
+          <p class="sub">I connect clinical research to go-to-market, turning customer evidence into segments, messaging, launch plans, and adoption metrics for digital health products.</p>
+          <div class="ctas">
+            <a href="#flagship" class="btn primary">Review case studies <span class="arr" aria-hidden="true">↓</span></a>
+            <a href="#contact" class="btn ghost">Get in touch</a>
+          </div>
+        </div>
+        <div class="live-card" role="group" aria-labelledby="lc-h">
+          <div class="lc-top"><span class="lc-name" id="lc-h">MedCASH</span><span class="live"><i aria-hidden="true"></i>Launched Oct 2026</span></div>
+          <p class="lc-pos">"One health wallet for any care cost insurance doesn't cover, not just prescriptions."</p>
+          <p class="lc-k">My go-to-market: segments → tiers</p>
+          <ul class="lc-map">
+            <li><span>Cash-flow strained</span><b>Free / Mission</b></li>
+            <li><span>High co-pay &amp; HDHP</span><b>Entry</b></li>
+            <li><span>Chronic illness</span><b>Premium</b></li>
+            <li><span>Caregivers</span><b>Elite</b></li>
+          </ul>
+          <a class="lc-link" href="#flagship">Read the GTM strategy <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>94%</b><span>Task success</span><small>SBIRT app usability study</small></div>
+        <div class="metric"><b>75.9</b><span>Usability score</span><small>Industry benchmark is 70</small></div>
+        <div class="metric"><b>68</b><span>Providers heard</span><small>Statewide voice-of-customer study</small></div>
+        <div class="metric"><b>393</b><span>Clients in pilot</span><small>TPA-8 measure across 10 programs</small></div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-card">
-        <span class="eyebrow">Marketing · Analytics · Program Management</span>
-        <h1>Turning insight into strategy, execution, and measurable growth.</h1>
-        <p class="lead">Program management, marketing, and analytics professional with 10+ years of experience leading cross-functional initiatives across digital health, mHealth, behavioral health, and healthcare strategy. MBA graduate in Marketing & Information Systems with experience managing stakeholder alignment, operational workstreams, performance measurement, research, and data-driven execution.</p>
+  <section id="flagship" aria-labelledby="flag-h">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="shead-row"><p class="eyebrow"><span class="dot" aria-hidden="true"></span>Flagship deep dive</p><span class="live"><i aria-hidden="true"></i>Launched Oct 2026</span></div>
+          <h2 class="h2" id="flag-h">MedCASH go-to-market strategy</h2>
+        </div>
+        <p class="side">I built the segmentation, positioning, and launch plan for a health wallet that covers any care cost insurance doesn't. MedCASH launched in October 2026.</p>
+      </div>
 
-        <div class="positioning">
-          <strong>Positioning</strong>
-          <p>I help teams clarify priorities, translate stakeholder needs into actionable plans, and move complex work forward. My background combines strategy, research, analytics, and program delivery across healthcare, technology, and mission-driven environments.</p>
-          <div class="pills" aria-label="Professional focus areas">
-            <span class="pill">Product Marketing</span>
-            <span class="pill">Program Management</span>
-            <span class="pill">Marketing Analytics</span>
-            <span class="pill">UX Research</span>
-            <span class="pill">Digital Health</span>
+      <div class="panel">
+        <div class="ftabs" role="tablist" aria-label="MedCASH case study">
+          <button class="ftab" role="tab" id="ft1" aria-controls="fp1" aria-selected="true" tabindex="0" type="button"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>1. Context &amp; positioning</button>
+          <button class="ftab" role="tab" id="ft2" aria-controls="fp2" aria-selected="false" tabindex="-1" type="button"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 6 2 0 4.5-.5 6-2"/><path d="M9 15l-3-3c2-6 7-9 14-9 0 7-3 12-9 14z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg>2. GTM plan</button>
+          <button class="ftab" role="tab" id="ft3" aria-controls="fp3" aria-selected="false" tabindex="-1" type="button"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>3. Messaging matrix</button>
+          <button class="ftab" role="tab" id="ft4" aria-controls="fp4" aria-selected="false" tabindex="-1" type="button"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="m7 15 4-4 3 3 5-6"/></svg>4. Outcome &amp; scope</button>
+        </div>
+
+        <div class="fpane" role="tabpanel" id="fp1" aria-labelledby="ft1" tabindex="0">
+          <div class="two">
+            <div class="stack">
+              <h3 class="h3">The market opportunity &amp; friction</h3>
+              <p class="body-sm">Insurance leaves gaps, and the bills land at the worst time: before payday, before the deductible, every month for chronic care, or on someone else's behalf. One generic message couldn't reach all of those patients, and the team had to decide which buyer to lead with.</p>
+              <div class="inset"><span class="k">Target buyer (ICP)</span><p>Employers whose workers face high out-of-pocket costs, followed by health systems.</p></div>
+              <div class="inset"><span class="k">End users</span><p>Four patient segments: cash-flow strained, high co-pay, chronic illness, and caregivers.</p></div>
+            </div>
+            <div class="shift">
+              <p class="t">Positioning shift</p>
+              <div><span class="pill before">Category default · Rx discount cards</span><p class="q-before">"Save on your prescriptions."</p></div>
+              <div><span class="pill after">MedCASH positioning</span><p class="q-after">"One health wallet for any care cost insurance doesn't cover, not just prescriptions."</p></div>
+              <dl class="rows">
+                <div><dt>Category</dt><dd>Health wallet</dd></div>
+                <div><dt>Benefits</dt><dd>Four tiers matched to need, from a free mission tier to an elite tier for caregivers</dd></div>
+                <div><dt>Proof</dt><dd>Statista benchmark data cited on every strategy slide</dd></div>
+                <div><dt>Validation</dt><dd>K-Means and GMM clustering pilot designed to confirm the segments</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="fpane" role="tabpanel" id="fp2" aria-labelledby="ft2" tabindex="0" hidden>
+          <div class="three">
+            <div class="gcard"><div class="icon i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div><h4>Segmentation &amp; tiered packaging</h4><p>Four patient segments, each mapped to a product tier: Free / Mission, Entry, Premium, and Elite. Each segment gets its own value story instead of one generic pitch.</p></div>
+            <div class="gcard"><div class="icon e"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg></div><h4>Launch sequencing</h4><p>Employers first as the primary B2B buyer, health systems second, with a clustering pilot up front to validate the segments.</p></div>
+            <div class="gcard"><div class="icon i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/></svg></div><h4>Channel flywheel &amp; measurement</h4><p>The Frank About Health podcast, social, sponsors, and the product each feed the others. UTM attribution flows into KPI dashboards, a GTM tracker, and a RICE-scored roadmap.</p></div>
+          </div>
+          <ol class="phases">
+            <li><b>Phase 1 · Validate</b><span>Clustering pilot to confirm segments</span></li>
+            <li><b>Phase 2 · Employers</b><span>Lead with the primary B2B buyer</span></li>
+            <li><b>Phase 3 · Health systems</b><span>Extend to the secondary segment</span></li>
+          </ol>
+          <ul class="chips" style="margin-top:18px" aria-label="Channels"><li>Paid search</li><li>Display</li><li>Social</li><li>Email</li><li>Organic search</li><li>CRM/EMR integration</li><li>Podcast</li></ul>
+        </div>
+
+        <div class="fpane" role="tabpanel" id="fp3" aria-labelledby="ft3" tabindex="0" hidden>
+          <div class="matrix-wrap">
+            <table class="mx">
+              <caption class="sr">Messaging matrix: four patient segments by tier, need, message, and channel</caption>
+              <thead><tr><th scope="col">Segment</th><th scope="col">Tier</th><th scope="col">What they're dealing with</th><th scope="col">Message angle</th><th scope="col">Reach via</th></tr></thead>
+              <tbody>
+                <tr><td>Underbanked &amp; cash-flow strained</td><td class="tier">Free / Mission</td><td>Delay care when a bill lands before payday</td><td class="msg">"Get care now. Pay on a schedule that fits your paycheck."</td><td>Employer benefits enrollment, community health partners</td></tr>
+                <tr><td>High co-pay &amp; HDHP members</td><td class="tier">Entry</td><td>Pay most routine costs until a high deductible is met</td><td class="msg">"Your deductible, planned for before the bill arrives."</td><td>Employer open enrollment, HR benefits channels</td></tr>
+                <tr><td>Living with chronic illness</td><td class="tier">Premium</td><td>Recurring costs every month: refills, specialists, devices</td><td class="msg">"One wallet for every refill, visit, and device."</td><td>Health system patient portals, care management</td></tr>
+                <tr><td>Caregivers</td><td class="tier">Elite</td><td>Manage a parent's or partner's costs alongside their own</td><td class="msg">"Their care and yours, managed in one place."</td><td>Employer caregiving benefits, family-account invites</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">Segments and tiers come from the MedCASH marketing strategy. Message angles and channels shown here are illustrative; no confidential figures are included.</p>
+        </div>
+
+        <div class="fpane" role="tabpanel" id="fp4" aria-labelledby="ft4" tabindex="0" hidden>
+          <div class="two">
+            <div class="stack">
+              <h3 class="h3">The go-to-market I delivered</h3>
+              <ul class="deliv">
+                <li>Four-segment patient model mapped to tiers</li>
+                <li>Positioning and messaging by segment</li>
+                <li>Campaign architecture</li>
+                <li>KPI dashboards with UTM attribution</li>
+                <li>GTM tracker and sequencing deck</li>
+                <li>RICE-scored roadmap</li>
+              </ul>
+            </div>
+            <div class="stack">
+              <div class="scope"><div><span class="k">What I owned</span><p>Segmentation, positioning, messaging, the launch sequence, and the KPI framework</p></div><div><span class="k">Handed off</span><p>Day-to-day campaign execution and post-launch reporting</p></div></div>
+              <div class="status"><b>Status · Live</b>MedCASH launched in October 2026. My engagement covered the strategy: segmentation, positioning, messaging, launch sequencing, and the KPI framework.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <p class="eyebrow">Core competencies in action</p>
+          <h2 class="h2" id="work-h">Research-to-GTM playbooks</h2>
+        </div>
+        <p class="side">Three case files, each readable in about three minutes. Open one to see the problem, my approach, the hero artifact, and the outcome.</p>
+      </div>
+
+      <div class="bento">
+        <article class="bcard" id="bc1">
+          <div>
+            <div class="btop"><span class="icon e"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><span class="tagp e">68 providers · 5 themes</span></div>
+            <h3>Voice of customer → product definition</h3>
+            <p>Synthesized statewide focus groups on value-based payment into five themes, then co-authored the TPA-8, an eight-question progress measure built for the needs we heard.</p>
+          </div>
+          <button class="open" type="button" aria-expanded="true" aria-controls="cf1">Open case file <span class="arr" aria-hidden="true">→</span></button>
+        </article>
+        <article class="bcard" id="bc2">
+          <div>
+            <div class="btop"><span class="icon i"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span><span class="tagp e">94% task success</span></div>
+            <h3>Adoption research: SBIRT app</h3>
+            <p>Ran think-aloud usability testing of a point-of-care screening app with 12 health coaches. It scored 75.9 on usability, above the 70 benchmark, and was named an iMedicalApps iOS pick.</p>
+          </div>
+          <button class="open" type="button" aria-expanded="false" aria-controls="cf2">Open case file <span class="arr" aria-hidden="true">→</span></button>
+        </article>
+        <article class="bcard" id="bc3">
+          <div>
+            <div class="btop"><span class="icon e"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span><span class="tagp i">~70% of days logged</span></div>
+            <h3>Engagement: Healthy Hearts &amp; Kidneys</h3>
+            <p>Operations and technology integration for an NIH-funded mHealth trial. Early engagement data led to a redesigned onboarding with step-by-step screenshot guides.</p>
+          </div>
+          <button class="open" type="button" aria-expanded="false" aria-controls="cf3">Open case file <span class="arr" aria-hidden="true">→</span></button>
+        </article>
+      </div>
+
+      <!-- CASE FILE 1 -->
+      <div class="casefile" id="cf1" role="region" aria-labelledby="cf1-h">
+        <div class="cf-head">
+          <div style="display:grid;gap:8px"><p class="eyebrow">Case file · Voice of customer → product</p><h3 id="cf1-h">What 68 treatment leaders needed, and the tool built for it</h3></div>
+          <p class="src">Sources: O'Grady, Lincourt, Gilmer et al., Substance Abuse: Research and Treatment, 2020; O'Grady, Lincourt, Hussain, Gilmer &amp; Neighbors, Journal of Addictive Diseases, 2019.</p>
+        </div>
+        <dl class="snap">
+          <div><dt>Product</dt><dd>TPA-8, a progress measure for addiction treatment programs</dd></div>
+          <div><dt>Audience</dt><dd>Program leaders and counselors; state and health-plan partners</dd></div>
+          <div><dt>My role</dt><dd>Qualitative coder on the provider study; co-author on the TPA-8 pilot</dd></div>
+          <div><dt>Core question</dt><dd>As payment shifts to outcomes, what do providers need to prove their value?</dd></div>
+          <div><dt>Constraints</dt><dd>Providers short on time, staff, and data systems; payers hadn't named the metrics</dd></div>
+        </dl>
+        <div class="beats">
+          <div class="beat"><h4><span>01</span>Designed for</h4><p>New York was moving Medicaid addiction treatment toward value-based payment. The state needed to know what providers struggled with and what support would help. Meanwhile, programs lacked a brief tool to show clients were improving, the way the PHQ-9 does for depression care.</p></div>
+          <div class="beat"><h4><span>02</span>How I did it</h4><p>One of three coders on five statewide focus groups: a shared codebook in Atlas.ti, 80% agreement before splitting the work, then codes condensed into themes. On the TPA-8 team, insurers and providers shaped the requirements, 16 clients tested the wording, and 393 clients at 10 programs piloted it.</p></div>
+          <div class="beat"><h4><span>03</span>Outcome</h4><p><strong>Clear requirements, then a working product.</strong> Five themes with recommendations for states and health plans. The TPA-8 produced two reliable scores (<span class="k-num">α .75</span>) that tracked acuity: outpatient clients scored <span class="k-num">6.4</span> points higher than clients in detox.</p></div>
+        </div>
+        <div class="scope"><div><span class="k">What I owned</span><p>Coding and synthesis: 345 meaning units condensed into 5 themes</p></div><div><span class="k">What I contributed to</span><p>State recommendations, and the TPA-8 pilot as a co-author</p></div></div>
+
+        <div class="box">
+          <span class="htag">Hero artifact · Key insights</span>
+          <h4>From transcripts to themes</h4>
+          <ol class="pipe"><li><b>345</b><span>meaning units</span></li><li><b>36</b><span>codes</span></li><li><b>13</b><span>categories</span></li><li><b>5</b><span>themes</span></li></ol>
+          <div class="themes">
+            <details class="theme" name="voc" open><summary><span class="mono">Theme 1</span><strong>Overwhelmed administrators</strong><span class="pm" aria-hidden="true"></span></summary>
+              <div class="tbody"><div><blockquote>The TAC is great in having all these webinars that kinda help, but who has time? Sometimes I have it going but I'm doing 20 other things.</blockquote><p class="heard">Competing demands, thin data infrastructure, staffing gaps, and more acute patients.</p></div><div class="impl"><span class="k">Product implication</span>Anything new has to fit a crowded day. Brevity and low setup cost decide adoption.</div></div></details>
+            <details class="theme" name="voc"><summary><span class="mono">Theme 2</span><strong>Confusion and financial fear</strong><span class="pm" aria-hidden="true"></span></summary>
+              <div class="tbody"><div><blockquote>No one has come out and said these are the outcomes, prepare yourself, start looking at that, start training your staff.</blockquote><p class="heard">Unclear metrics, unclear contracting, and doubts that community programs would share in savings.</p></div><div class="impl"><span class="k">Product implication</span>Lead with the measure. Buyers commit once they know how success will be counted.</div></div></details>
+            <details class="theme" name="voc"><summary><span class="mono">Theme 3</span><strong>Investing in the workforce</strong><span class="pm" aria-hidden="true"></span></summary>
+              <div class="tbody"><div><blockquote>When we're developing QI projects it's what do you wanna do? What do you see as something you can work on? Okay great, create a goal around that.</blockquote><p class="heard">Readiness surveys, training in evidence-based practices, and supports to retain staff.</p></div><div class="impl"><span class="k">Product implication</span>Adoption runs through front-line clinicians. Give them ownership of the goal.</div></div></details>
+            <details class="theme" name="voc"><summary><span class="mono">Theme 4</span><strong>Building new business models</strong><span class="pm" aria-hidden="true"></span></summary>
+              <div class="tbody"><div><blockquote>We're very data driven… putting in the right questions in the EMR and having people who can pull that information out.</blockquote><p class="heard">New services, niche populations, new partnerships, and cleaner EHR data.</p></div><div class="impl"><span class="k">Product implication</span>An early-adopter segment exists. Design for the EHR they already have.</div></div></details>
+            <details class="theme" name="voc"><summary><span class="mono">Theme 5</span><strong>Support that fits each program</strong><span class="pm" aria-hidden="true"></span></summary>
+              <div class="tbody"><div><blockquote>More individualized consulting opposed to generalized webinars and day-long sessions… each agency is at a totally different point.</blockquote><p class="heard">Exact metric targets, better health-plan relationships, line-staff training, hands-on help.</p></div><div class="impl"><span class="k">Product implication</span>One-size onboarding fails here. Segment programs by readiness.</div></div></details>
+          </div>
+        </div>
+
+        <div class="box">
+          <h4>From listening to building</h4>
+          <div class="bridge">
+            <div class="brow"><span>What providers asked for</span><span></span><span>How the TPA-8 answers it</span></div>
+            <div class="brow"><span><small>Theme 1</small>Measurement that doesn't add to a crowded day</span><span class="ar" aria-hidden="true">→</span><span>Eight questions at a sixth-grade reading level</span></div>
+            <div class="brow"><span><small>Theme 2</small>Clear outcomes to be measured on</span><span class="ar" aria-hidden="true">→</span><span>Two scores with tested reliability, tracked over time</span></div>
+            <div class="brow"><span><small>Themes 3 &amp; 4</small>Data clinicians can act on</span><span class="ar" aria-hidden="true">→</span><span>Items on cravings, confidence, support, and hope point to next steps</span></div>
+          </div>
+        </div>
+
+        <div class="box">
+          <span class="htag">Product demo · Try it</span>
+          <h4>Score a sample TPA-8 check-in</h4>
+          <p class="body-sm" style="color:var(--muted)">The real eight questions, pre-filled with an example client. Change any answer and the scores update the way the study scored them.</p>
+          <div class="scorer">
+            <form class="items" id="tpaForm" aria-label="TPA-8 sample check-in">
+              <div class="items-lead">How often in the past 2 weeks…</div>
+<fieldset class="q"><legend><span class="n">01</span>Did you have thoughts of drinking or drug use?<span class="tag s">Symptoms · reversed</span></legend><div class="opts"><input type="radio" name="q1" id="q1-1" value="1" data-default="0"><label for="q1-1">Not at all</label><input type="radio" name="q1" id="q1-2" value="2" data-default="1" checked><label for="q1-2">Several days</label><input type="radio" name="q1" id="q1-3" value="3" data-default="0"><label for="q1-3">More than half the days</label><input type="radio" name="q1" id="q1-4" value="4" data-default="0"><label for="q1-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">02</span>Did you have problems with other people in your life because of your drinking or drug use?<span class="tag s">Symptoms · reversed</span></legend><div class="opts"><input type="radio" name="q2" id="q2-1" value="1" data-default="1" checked><label for="q2-1">Not at all</label><input type="radio" name="q2" id="q2-2" value="2" data-default="0"><label for="q2-2">Several days</label><input type="radio" name="q2" id="q2-3" value="3" data-default="0"><label for="q2-3">More than half the days</label><input type="radio" name="q2" id="q2-4" value="4" data-default="0"><label for="q2-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">03</span>Did your drinking or drug use keep you from doing the things you were supposed to do?<span class="tag s">Symptoms · reversed</span></legend><div class="opts"><input type="radio" name="q3" id="q3-1" value="1" data-default="0"><label for="q3-1">Not at all</label><input type="radio" name="q3" id="q3-2" value="2" data-default="1" checked><label for="q3-2">Several days</label><input type="radio" name="q3" id="q3-3" value="3" data-default="0"><label for="q3-3">More than half the days</label><input type="radio" name="q3" id="q3-4" value="4" data-default="0"><label for="q3-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">04</span>Did you feel confident that you could make changes in your drinking or drug use?<span class="tag p">Progress</span></legend><div class="opts"><input type="radio" name="q4" id="q4-1" value="1" data-default="0"><label for="q4-1">Not at all</label><input type="radio" name="q4" id="q4-2" value="2" data-default="0"><label for="q4-2">Several days</label><input type="radio" name="q4" id="q4-3" value="3" data-default="1" checked><label for="q4-3">More than half the days</label><input type="radio" name="q4" id="q4-4" value="4" data-default="0"><label for="q4-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">05</span>Did you drink or use more drugs than you intended?<span class="tag s">Symptoms · reversed</span></legend><div class="opts"><input type="radio" name="q5" id="q5-1" value="1" data-default="0"><label for="q5-1">Not at all</label><input type="radio" name="q5" id="q5-2" value="2" data-default="1" checked><label for="q5-2">Several days</label><input type="radio" name="q5" id="q5-3" value="3" data-default="0"><label for="q5-3">More than half the days</label><input type="radio" name="q5" id="q5-4" value="4" data-default="0"><label for="q5-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">06</span>Did you feel that you could manage feeling anxious or depressed?<span class="tag p">Progress</span></legend><div class="opts"><input type="radio" name="q6" id="q6-1" value="1" data-default="0"><label for="q6-1">Not at all</label><input type="radio" name="q6" id="q6-2" value="2" data-default="1" checked><label for="q6-2">Several days</label><input type="radio" name="q6" id="q6-3" value="3" data-default="0"><label for="q6-3">More than half the days</label><input type="radio" name="q6" id="q6-4" value="4" data-default="0"><label for="q6-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">07</span>Did you feel that at least one person from your treatment team was helping you achieve your goals?<span class="tag p">Progress</span></legend><div class="opts"><input type="radio" name="q7" id="q7-1" value="1" data-default="0"><label for="q7-1">Not at all</label><input type="radio" name="q7" id="q7-2" value="2" data-default="0"><label for="q7-2">Several days</label><input type="radio" name="q7" id="q7-3" value="3" data-default="0"><label for="q7-3">More than half the days</label><input type="radio" name="q7" id="q7-4" value="4" data-default="1" checked><label for="q7-4">Nearly every day</label></div></fieldset>
+<fieldset class="q"><legend><span class="n">08</span>Did you feel hopeful that your life will get better?<span class="tag p">Progress</span></legend><div class="opts"><input type="radio" name="q8" id="q8-1" value="1" data-default="0"><label for="q8-1">Not at all</label><input type="radio" name="q8" id="q8-2" value="2" data-default="0"><label for="q8-2">Several days</label><input type="radio" name="q8" id="q8-3" value="3" data-default="1" checked><label for="q8-3">More than half the days</label><input type="radio" name="q8" id="q8-4" value="4" data-default="0"><label for="q8-4">Nearly every day</label></div></fieldset>
+            </form>
+            <div class="results" role="group" aria-labelledby="res-h">
+              <p class="eyebrow" id="res-h">Example client · scores</p>
+              <div class="r-total" role="status" aria-live="polite"><b id="rTotal">25</b><span>/ 32 total</span></div>
+              <div class="r-meter"><div class="r-label"><span>SUD symptoms</span><b id="rSym">13 / 16</b></div><div class="track"><span class="fill" id="fSym"></span><span class="mean" style="--m:.456"></span></div><div class="ends"><span>4 · worse</span><span>16 · better</span></div></div>
+              <div class="r-meter prog"><div class="r-label"><span>Treatment progress</span><b id="rProg">12 / 16</b></div><div class="track"><span class="fill" id="fProg"></span><span class="mean" style="--m:.548"></span></div><div class="ends"><span>4 · worse</span><span>16 · better</span></div></div>
+              <p class="key"><i aria-hidden="true"></i>Pilot average at treatment entry (9.5 and 10.6)</p>
+              <button class="r-btn" type="button" id="tpaReset">Reset example</button>
+              <p class="r-note">Higher scores mean better functioning. Items 1, 2, 3 and 5 are reverse-scored, as in the paper. No clinical cutoffs have been set, so this is a scoring demo, not a clinical tool.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <aside class="card side-card" aria-label="Professional metrics">
-        <div class="metric">
-          <strong>10+</strong>
-          <p>Years across research, strategy, marketing, and healthcare programs</p>
+      <!-- CASE FILE 2 -->
+      <div class="casefile" id="cf2" role="region" aria-labelledby="cf2-h" hidden>
+        <div class="cf-head">
+          <div style="display:grid;gap:8px"><p class="eyebrow">Case file · Adoption research</p><h3 id="cf2-h">Only 1 in 6 binge drinkers gets asked. We made asking easy.</h3></div>
+          <p class="src">Source: O'Grady, Kapoor, Gilmer et al., ACI Open, 2019.</p>
         </div>
-        <div class="metric">
-          <strong>126.5%</strong>
-          <p>Service target overperformance</p>
+        <dl class="snap">
+          <div><dt>Product</dt><dd>SBIRT for Health Professionals, a free iOS app</dd></div>
+          <div><dt>Audience</dt><dd>Health coaches, physicians, nurses, and social workers</dd></div>
+          <div><dt>My role</dt><dd>Usability research: think-aloud sessions, surveys, coding</dd></div>
+          <div><dt>Core question</dt><dd>Will providers actually use this app during real visits?</dd></div>
+          <div><dt>Constraints</dt><dd>12 users, all already trained in SBIRT; worry about losing eye contact</dd></div>
+        </dl>
+        <div class="beats">
+          <div class="beat"><h4><span>01</span>Designed for</h4><p>Time, training, and stigma keep providers from screening patients for substance use. The app walks any provider from screening to a risk level to a brief intervention tailored to the patient's answers.</p></div>
+          <div class="beat"><h4><span>02</span>How I did it</h4><p>I facilitated think-aloud sessions in which 12 health coaches each completed 18 tasks on an iPad, ran the SUS and CSUQ surveys, and coded interviews and audio in Atlas.ti against the FITT framework: how well the person, the task, and the technology fit.</p></div>
+          <div class="beat"><h4><span>03</span>Outcome</h4><p><strong>Adoption readiness.</strong> <span class="k-num">94%</span> first-try task success and a <span class="k-num">75.9</span> usability score, about 10 points above the only other published SBIRT app. Feedback became the revision list.</p></div>
         </div>
-        <div class="metric">
-          <strong>22%</strong>
-          <p>Improvement in user compliance</p>
-        </div>
-        <div class="metric">
-          <strong>75+</strong>
-          <p>Providers engaged through focus groups</p>
-        </div>
-      </aside>
-    </section>
-
-    <section id="strengths">
-      <div class="section-head">
-        <span class="eyebrow">Core Strengths</span>
-        <h2>Strategy and execution for cross-functional teams.</h2>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <h3>Marketing &amp; GTM</h3>
-          <p>Positioning, audience segmentation, value proposition development, channel planning, content operations, launch support, and campaign performance analysis.</p>
-        </article>
-
-        <article class="card">
-          <h3>Analytics &amp; Research</h3>
-          <p>UX research, A/B testing, experimental design, predictive modeling, regression, classification, clustering, SQL, Python, Tableau, GA4, and Qualtrics.</p>
-        </article>
-
-        <article class="card">
-          <h3>Program Leadership</h3>
-          <p>Cross-functional coordination, stakeholder alignment, vendor management, compliance review, timeline management, scope control, and executive-ready reporting.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="impact">
-      <div class="section-head">
-        <span class="eyebrow">Selected Impact</span>
-        <h2>Examples of measurable, cross-functional work.</h2>
-      </div>
-
-      <div class="grid-2">
-        <article class="card">
-          <h3>Healthcare product and program strategy</h3>
-          <p>Led cross-functional workstreams across segmentation, positioning, GTM planning, employer pilot outreach, KPI tracking, stakeholder needs, and MVP scope for a healthcare-fintech wallet.</p>
-        </article>
-
-        <article class="card">
-          <h3>Digital health program scale</h3>
-          <p>Managed a $10M SAMHSA-funded initiative, coordinating vendors, compliance requirements, timelines, and stakeholder deliverables while exceeding service targets by 126.5%.</p>
-        </article>
-
-        <article class="card">
-          <h3>mHealth UX improvement</h3>
-          <p>Led UX research and A/B testing to identify user friction points and support a 22% improvement in compliance through iterative product design.</p>
-        </article>
-
-        <article class="card">
-          <h3>Provider and stakeholder insight</h3>
-          <p>Facilitated five regional focus groups with 75+ providers and translated market readiness findings into strategic recommendations for health system partners.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="contact">
-        <div class="section-head">
-          <span class="eyebrow">Contact</span>
-          <h2>Open to marketing, analytics, strategy, product, and program management roles.</h2>
-          <p>Based in New York. Available for conversations across healthcare, technology, marketing, analytics, and strategy-focused roles.</p>
-        </div>
-
-        <aside class="card">
-          <div class="contact-links">
-            <a class="contact-link" href="mailto:elg10@fordham.edu">
-              <span>Email</span>
-              <span>elg10@fordham.edu</span>
-            </a>
-            <a class="contact-link" href="tel:+19179930708">
-              <span>Phone</span>
-              <span>917-993-0708</span>
-            </a>
-            <a class="contact-link" href="https://linkedin.com/in/gilmee02" target="_blank" rel="noreferrer">
-              <span>LinkedIn</span>
-              <span>linkedin.com/in/gilmee02</span>
-            </a>
-            <a class="contact-link" href="Resume_EvanGilmer_MAR.pdf" target="_blank" rel="noreferrer">
-              <span>Resume</span>
-              <span>Download PDF</span>
-            </a>
+        <div class="scope"><div><span class="k">What I owned</span><p>Running the usability study and analyzing the results</p></div><div><span class="k">What I influenced</span><p>The revision list and training plan; the app build belonged to the wider team</p></div></div>
+        <div class="two">
+          <div class="box">
+            <span class="htag">Hero artifact · Usability readout</span>
+            <h4>Usability against the benchmark</h4>
+            <div class="hbars" role="img" aria-label="System Usability Scale, 0 to 100: SBIRT for Health Professionals 75.9; only other published SBIRT app 65.8; acceptable benchmark 70.">
+              <div class="hrow"><span>SBIRT for Health Professionals</span><div class="htrack"><span class="hfill e" style="--v:75.9"></span><span class="bench"></span></div><b>75.9</b></div>
+              <div class="hrow"><span>Only other published SBIRT app</span><div class="htrack"><span class="hfill m" style="--v:65.8"></span><span class="bench"></span></div><b>65.8</b></div>
+              <div class="axis" aria-hidden="true"><span></span><div class="ticks"><span style="left:0">0</span><span style="left:25%">25</span><span style="left:50%">50</span><span style="left:75%">75</span><span style="left:100%">100</span></div><span></span></div>
+              <p class="legend"><span><i></i>70 · acceptable usability</span></p>
+            </div>
+            <div class="tiles">
+              <div class="tile"><b>94%</b><span>task success</span></div>
+              <div class="tile"><b>84.1</b><span>learnability</span></div>
+              <div class="tile"><b>5.5/7</b><span>satisfaction</span></div>
+              <div class="tile"><b>0%</b><span>found it too complex</span></div>
+            </div>
           </div>
-        </aside>
+          <div class="box">
+            <h4>What coaches told us</h4>
+            <blockquote class="quote pos">"This [the application] has everything we need to do our job."<cite>Health coach, usability study</cite></blockquote>
+            <blockquote class="quote neg">"I don't like having to use the sliding function to answer the questions; it's easier to just click."<cite>Health coach, usability study</cite></blockquote>
+            <ul class="plain"><li>Revise save-and-exit, the source of most task errors</li><li>Swap sliders for tap targets</li><li>Train on keeping eye contact while using a screen</li></ul>
+            <figure class="press" style="margin:0"><blockquote>"The straightforward design is easy to use for both provider and patient."</blockquote><figcaption>iMedicalApps · iOS pick of the week · Apr 6, 2018 · <a class="tlink" href="https://www.imedicalapps.com/2018/04/ios-android-best-apps-this-week-april-6-2018/" target="_blank" rel="noopener">Read ↗</a></figcaption></figure>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>© 2026 Evan L. Gilmer</p>
-  </footer>
+      <!-- CASE FILE 3 -->
+      <div class="casefile" id="cf3" role="region" aria-labelledby="cf3-h" hidden>
+        <div class="cf-head">
+          <div style="display:grid;gap:8px"><p class="eyebrow">Case file · Engagement</p><h3 id="cf3-h">Four lifestyle changes at once. One iPad doing the mental math.</h3></div>
+          <p class="src">Source: Sevick et al., Contemporary Clinical Trials, 2018. ClinicalTrials.gov NCT02276742.</p>
+        </div>
+        <dl class="snap">
+          <div><dt>Product</dt><dd>iPad self-monitoring and video group counseling program</dd></div>
+          <div><dt>Audience</dt><dd>Overweight adults with type 2 diabetes and kidney disease</dd></div>
+          <div><dt>My role</dt><dd>Operations and technology integration; grant management</dd></div>
+          <div><dt>Core question</dt><dd>Which digital mix keeps people engaged through four lifestyle changes?</dd></div>
+          <div><dt>Constraints</dt><dd>Participants new to iPads; strict data security; a 6-month program</dd></div>
+        </dl>
+        <div class="beats">
+          <div class="beat"><h4><span>01</span>Designed for</h4><p>People with diabetes and kidney disease must cut calories, sodium, and phosphate additives and move more, all at once. Tracking it is exhausting. The trial tested self-monitoring, theory-based group counseling, or both.</p></div>
+          <div class="beat"><h4><span>02</span>How I did it</h4><p>Operations and technology integration at NYU Langone: 4G iPads locked to the study tools (video classes, a food and activity log, dietitian feedback), with no app store or browser, remote wipe, and email behind the NYU firewall.</p></div>
+          <div class="beat"><h4><span>03</span>Outcome</h4><p><strong>Engagement.</strong> Early cohorts attended a median of <span class="k-num">50–62%</span> of sessions and logged meals on about <span class="k-num">70%</span> of days, lower than planned. Training was redesigned with screenshot guides, and later cohorts appeared to improve.</p></div>
+        </div>
+        <div class="scope"><div><span class="k">What I owned</span><p>Trial operations and technology integration</p></div><div><span class="k">Team outcome I supported</span><p>Engagement tracking and the training redesign that followed</p></div></div>
+        <div class="two">
+          <div class="box">
+            <span class="htag">Hero artifact · Engagement readout</span>
+            <h4>Early adherence by arm</h4>
+            <div class="hbars" role="img" aria-label="Median session attendance: Monitoring 62.2%, SCT 53.3%, Combined 50.0%. Days with a meal logged: Monitoring 71.4%, Combined 68.0%.">
+              <p class="mono chart-k">Median session attendance</p>
+              <div class="hrow"><span>Monitoring</span><div class="htrack"><span class="hfill" style="--v:62.2"></span></div><b>62.2%</b></div>
+              <div class="hrow"><span>Counseling</span><div class="htrack"><span class="hfill" style="--v:53.3"></span></div><b>53.3%</b></div>
+              <div class="hrow"><span>Combined</span><div class="htrack"><span class="hfill" style="--v:50"></span></div><b>50.0%</b></div>
+              <p class="mono chart-k" style="margin-top:6px">Days with a meal logged</p>
+              <div class="hrow"><span>Monitoring</span><div class="htrack"><span class="hfill e" style="--v:71.4"></span></div><b>71.4%</b></div>
+              <div class="hrow"><span>Combined</span><div class="htrack"><span class="hfill e" style="--v:68"></span></div><b>68.0%</b></div>
+            </div>
+            <p class="note" style="margin:0">First three cohorts, n = 12, 12, and 14. Bars run from 0 to 100%.</p>
+          </div>
+          <div class="box">
+            <h4>A 2 × 2 trial design</h4>
+            <div class="axes"><span>No self-monitoring</span><span>iPad self-monitoring</span></div>
+            <div class="grid2x2">
+              <div class="cell"><b>ADVICE</b><span>Targets by mail and phone</span></div>
+              <div class="cell c1"><b>MONITORING</b><span>Classes, food log, dietitian feedback</span></div>
+              <div class="cell c2"><b>COUNSELING</b><span>Classes plus self-efficacy group counseling</span></div>
+              <div class="cell c3"><b>COMBINED</b><span>Classes, counseling, logging, feedback</span></div>
+            </div>
+            <div class="mail"><div class="from"><span>Study dietitian</span><span>Biweekly feedback</span></div><p>"Continue to review your MyNetDiary food record to identify the foods that are contributing to your sodium intake. Processed meat, like deli ham, is a high contributor."</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    const root = document.documentElement;
-    const toggle = document.querySelector("[data-theme-toggle]");
+  <section id="frameworks" aria-labelledby="fw-h">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">GTM methodology</p>
+        <h2 class="h2" id="fw-h">The 3 pillars of evidence-led PMM</h2>
+        <p class="lead">Product marketing in health is a behavior-change problem. These are the habits I bring from research into go-to-market.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><span class="n">01</span><h3>Evidence over opinion</h3><p>I ground segments and messages in what real users do and say: think-aloud sessions, focus groups, surveys, and market benchmarks, not internal hunches.</p><span class="proof">68 providers · 12 health coaches · 393 clients</span></div>
+        <div class="pillar"><span class="n">02</span><h3>Clarity for busy people</h3><p>Clinicians and patients have seconds, not minutes. One or two questions per screen, eight items at a sixth-grade reading level, one clear promise per segment.</p><span class="proof">SBIRT app · TPA-8 · MedCASH</span></div>
+        <div class="pillar"><span class="n">03</span><h3>Measure adoption before scale</h3><p>Usability, task success, and engagement are leading indicators of adoption. I test them early, then fix what they reveal before spending on reach.</p><span class="proof">94% task success · 75.9 SUS · ~70% logging days</span></div>
+      </div>
+    </div>
+  </section>
 
-    function setTheme(mode) {
-      root.setAttribute("data-theme", mode);
-      toggle.textContent = mode === "dark" ? "Light mode" : "Dark mode";
-      localStorage.setItem("theme", mode);
-    }
+  <section id="about" aria-labelledby="about-h" class="last">
+    <div class="wrap">
+      <div class="about">
+        <div class="stack">
+          <p class="eyebrow">About Evan Gilmer</p>
+          <h2 class="h2" id="about-h" style="font-size:clamp(1.8rem,3.6vw,2.6rem)">Research first, then growth.</h2>
+          <p>I spent a decade-plus in healthcare research and program evaluation, measuring how people behave and whether programs work. An MBA in Marketing and Information Systems from Fordham turned that toolkit toward go-to-market: who a product is for, what to say, and how to tell if it's working.</p>
+          <ol class="arc">
+            <li><span>01</span><div><b>Academic research.</b> Psychology research at NYU, Beth Israel, and Hunter College, including a co-first-author scale validation in PLoS ONE.</div></li>
+            <li><span>02</span><div><b>Health-tech research.</b> Usability research with Northwell Health, provider and measurement research with New York's addiction services agency, a $10M SAMHSA program, and mHealth trial operations at NYU Langone.</div></li>
+            <li><span>03</span><div><b>Product &amp; go-to-market.</b> MBA at Fordham's Gabelli School, then segmentation, messaging, and launch strategy for MedCASH.</div></li>
+          </ol>
+          <div class="pubs">
+            <h3>Publications &amp; press</h3>
+            <ul>
+              <li><span class="yr">2020</span><div><p class="pt">How are Substance Use Disorder Treatment Programs Adjusting to Value-Based Payment?</p><p class="pm2"><span>Substance Abuse: Research and Treatment · Co-author</span><a class="tlink" href="https://doi.org/10.1177/1178221820924026" target="_blank" rel="noopener">DOI ↗</a></p></div></li>
+              <li><span class="yr">2019</span><div><p class="pt">Treatment Progress Assessment-8: initial reliability and factor structure</p><p class="pm2"><span>Journal of Addictive Diseases · Co-author</span><a class="tlink" href="https://doi.org/10.1080/10550887.2019.1695512" target="_blank" rel="noopener">DOI ↗</a></p></div></li>
+              <li><span class="yr">2019</span><div><p class="pt">Point-of-care mobile app for substance use screening: a mixed-methods user experience study</p><p class="pm2"><span>ACI Open · Co-author</span><a class="tlink" href="https://doi.org/10.1055/s-0039-1684002" target="_blank" rel="noopener">DOI ↗</a></p></div></li>
+              <li><span class="yr">2018</span><div><p class="pt">SBIRT for Health Professionals named an iOS best app of the week</p><p class="pm2"><span>iMedicalApps · Press</span><a class="tlink" href="https://www.imedicalapps.com/2018/04/ios-android-best-apps-this-week-april-6-2018/" target="_blank" rel="noopener">Read ↗</a></p></div></li>
+              <li><span class="yr">2012</span><div><p class="pt">Emergency Room Validation of the Revised Suicide Trigger Scale (STS-3)</p><p class="pm2"><span>PLoS ONE · Co-first author</span></p></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="contact" id="contact">
+          <p class="eyebrow">Get in touch</p>
+          <div class="ci"><span class="k">Email</span><span class="v" id="emailVal">egilmer2007@gmail.com</span><div class="row"><button class="mini solid" id="copyBtn" type="button">Copy email</button><span class="sr" id="copyStatus" role="status" aria-live="polite"></span></div></div>
+          <div class="ci"><span class="k">LinkedIn</span><span class="v">in/gilmee02</span><div class="row"><a class="mini" href="https://www.linkedin.com/in/gilmee02" target="_blank" rel="noopener">Open profile ↗</a></div></div>
+          <div class="ci"><span class="k">GitHub</span><span class="v">gilmeenow</span><div class="row"><a class="mini" href="https://github.com/gilmeenow" target="_blank" rel="noopener">View repos ↗</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    const savedTheme = localStorage.getItem("theme");
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    setTheme(savedTheme || preferredTheme);
+<footer>
+  <div class="wrap">
+    <span>© 2026 Evan Gilmer · Product marketing for digital health · New York</span>
+    <nav aria-label="Footer"><a href="#contact">Email</a><a href="https://www.linkedin.com/in/gilmee02" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/gilmeenow" target="_blank" rel="noopener">GitHub</a></nav>
+  </div>
+</footer>
 
-    toggle.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme");
-      setTheme(current === "dark" ? "light" : "dark");
-    });
-  </script>
+<script>
+(function(){
+  // Mobile menu
+  var mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu'),mi=document.getElementById('menuIcon');
+  function setMenu(open){mm.hidden=!open;mb.setAttribute('aria-expanded',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');mi.setAttribute('d',open?'M6 6l12 12M18 6 6 18':'M4 7h16M4 12h16M4 17h16');}
+  mb.addEventListener('click',function(){setMenu(mm.hidden);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mm.hidden){setMenu(false);mb.focus();}});
+  matchMedia('(min-width:861px)').addEventListener('change',function(e){if(e.matches)setMenu(false);});
+
+  // Scrollspy: mark the nav link for the section in view
+  var navLinks=[].slice.call(document.querySelectorAll('.nav-links a'));
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;navLinks.forEach(function(a){if(a.getAttribute('href')==='#'+en.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});});},{rootMargin:'-40% 0px -55% 0px'});
+    navLinks.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)spy.observe(t);});
+  }
+
+  // Tab strip: drop the fade hint once scrolled to the end
+  var ftabs=document.querySelector('.ftabs');
+  function tabEdge(){ftabs.classList.toggle('end',ftabs.scrollLeft+ftabs.clientWidth>=ftabs.scrollWidth-4);}
+  ftabs.addEventListener('scroll',tabEdge,{passive:true});addEventListener('resize',tabEdge);tabEdge();
+  [].forEach.call(mm.querySelectorAll('a'),function(a){a.addEventListener('click',function(){setMenu(false);});});
+
+  // Flagship tabs
+  var tabs=[].slice.call(document.querySelectorAll('.ftab'));
+  function sel(i,focus){tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});if(focus)tabs[i].focus();tabs[i].scrollIntoView({block:'nearest',inline:'nearest'});}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(i,false);});
+    t.addEventListener('keydown',function(e){var n=tabs.length,to=null;if(e.key==='ArrowRight')to=(i+1)%n;else if(e.key==='ArrowLeft')to=(i-1+n)%n;else if(e.key==='Home')to=0;else if(e.key==='End')to=n-1;if(to!==null){e.preventDefault();sel(to,true);}});
+  });
+
+  // Bento -> case files
+  var opens=[].slice.call(document.querySelectorAll('.open'));
+  function openCase(btn,scroll){
+    opens.forEach(function(b){var on=b===btn;b.setAttribute('aria-expanded',on);b.closest('.bcard').classList.toggle('active',on);document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});
+    if(scroll){document.getElementById(btn.getAttribute('aria-controls')).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}
+  }
+  opens.forEach(function(b){b.addEventListener('click',function(){openCase(b,true);});});
+  openCase(opens[0],false);
+
+  // TPA-8 scorer
+  var form=document.getElementById('tpaForm'),REV={1:1,2:1,3:1,5:1};
+  function val(i){var c=form.querySelector('input[name="q'+i+'"]:checked');return c?+c.value:1;}
+  function score(){var sym=0,prog=0;for(var i=1;i<=8;i++){var v=val(i);if(REV[i])sym+=5-v;else prog+=v;}
+    document.getElementById('rTotal').textContent=sym+prog;document.getElementById('rSym').textContent=sym+' / 16';document.getElementById('rProg').textContent=prog+' / 16';
+    document.getElementById('fSym').style.setProperty('--p',(sym-4)/12);document.getElementById('fProg').style.setProperty('--p',(prog-4)/12);}
+  form.addEventListener('change',score);
+  document.getElementById('tpaReset').addEventListener('click',function(){[].forEach.call(form.querySelectorAll('input[data-default="1"]'),function(r){r.checked=true;});score();});
+  score();
+
+  // Copy email
+  var cb=document.getElementById('copyBtn'),ev=document.getElementById('emailVal'),st=document.getElementById('copyStatus');
+  function done(m){cb.textContent=m;st.textContent=m;setTimeout(function(){cb.textContent='Copy email';},1800);}
+  function fb(){var r=document.createRange();r.selectNodeContents(ev);var s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected, press Ctrl+C');}
+  cb.addEventListener('click',function(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ev.textContent.trim()).then(function(){done('Copied');},fb);}else fb();});
+})();
+</script>
 </body>
 </html>
