@@ -142,8 +142,9 @@ main:focus{outline:none}
 .mini b{display:block;font-size:clamp(19px,2vw,22px);line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
 .mini span{display:block;font-size:14px;line-height:1.3;color:var(--muted);margin-top:3px}
 .src{font-size:14px;color:var(--muted);margin-top:4px}
-.pubs{margin-top:clamp(36px,5vw,56px)}
-.pubs h3,.edu h3{font-size:17px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
+.refs{padding-block:clamp(40px,6vw,64px) 8px}
+.pubs{max-width:760px}
+.pubs h2,.edu h3{font-size:17px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
 .list{list-style:none;margin:0;padding:0;display:grid}
 .list li{display:flex;justify-content:space-between;gap:16px;padding-block:10px;border-bottom:1px solid var(--line);font-size:17px}
 .list li:first-child{border-top:1px solid var(--line)}
@@ -164,13 +165,42 @@ main:focus{outline:none}
 @media (max-width:400px){.path li{padding-left:14px;padding-top:50px}.path li::before{top:14px}}
 .edu{margin-top:clamp(36px,5vw,56px);max-width:640px}
 
+/* Story bridges */
+.section-head .kicker{margin-bottom:2px}
+.bridge{display:flex;flex-direction:column;align-items:center;gap:4px;margin:clamp(48px,7vw,80px) auto 0;text-align:center;text-decoration:none;color:var(--muted);font-size:18px;max-width:40ch}
+.bridge b{color:var(--accent);font-weight:700}
+.bridge:hover b{text-decoration:underline}
+
+/* Value proposition */
+.value{padding-block:clamp(56px,8vw,104px)}
+.uvp{margin-top:12px;border-radius:var(--r-lg);padding:clamp(28px,5vw,56px);color:#fff;background-color:var(--accent);background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:28px 28px;box-shadow:var(--shadow)}
+.uvp h2{color:#fff;font-size:clamp(30px,4vw,46px);line-height:1.1;max-width:22ch}
+.uvp p{color:#DCE6F5;font-size:clamp(18px,1.7vw,21px);max-width:54ch;margin-top:14px}
+.uvp-grid{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.uvp-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px}}
+.maps{list-style:none;margin:0;padding:0;display:grid}
+.maps li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-block:14px;border-top:1px solid rgba(255,255,255,.25)}
+.maps li:last-child{border-bottom:1px solid rgba(255,255,255,.25)}
+.maps b{font-size:clamp(20px,2vw,24px);color:#fff}
+.maps span{font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#DCE6F5;white-space:nowrap}
+.pillars{display:grid;gap:16px;margin-top:20px}
+@media (min-width:860px){.pillars{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pillar{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;display:grid;gap:8px;align-content:start;background:var(--bg)}
+.pk{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.big{display:block;font-size:clamp(36px,4vw,46px);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.bl{display:block;font-size:15px;color:var(--muted);margin-top:-2px}
+.pillar p{font-size:17px;color:var(--text);margin-top:6px}
+.proofs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.proofs a{display:inline-flex;align-items:center;min-height:32px;font-size:14px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--accent-soft);text-decoration:none}
+.proofs a:hover{background:#D7E2F3}
+
 /* Contact */
 .contact{padding-block:clamp(56px,8vw,96px);background:var(--accent-soft);color:var(--text);text-align:center;border-top:1px solid var(--line)}
 .contact h2{font-size:clamp(30px,3.6vw,40px)}
 .contact p{margin-top:10px;font-size:19px}
 .contact .row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin-top:28px}
 .email{font-size:20px;font-weight:600;color:var(--ink);user-select:all;overflow-wrap:anywhere}
-footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-block:0 32px;text-align:center}
+footer{background:var(--bg);color:var(--muted);font-size:15px;padding-block:24px 40px;text-align:center}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none !important;animation:none !important}html{scroll-behavior:auto}}
 </style>
@@ -180,7 +210,7 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
 <header class="nav">
   <div class="wrap">
     <a class="name" href="#top">Evan Gilmer</a>
-    <nav aria-label="Sections"><a href="#work">Case studies</a><a href="#research">Research</a><a href="#about">About</a></nav>
+    <nav aria-label="Sections"><a href="#work">Case studies</a><a href="#research">Research</a><a href="#value">Value</a></nav>
     <a class="btn primary sm" href="#contact">Contact</a>
   </div>
 </header>
@@ -219,12 +249,13 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
   <section class="work" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="section-head">
+        <p class="kicker">01 · The results</p>
         <h2 id="work-h">Case studies</h2>
-        <p>Who each one was for, how I approached it, and the numbers that showed the result.</p>
+        <p>Three results: clinical adoption, multi-site implementation, and a route to market.</p>
       </div>
 
       <div class="projects">
-        <article class="project">
+        <article class="project" id="cs-medcash">
           <figure class="art">
             <img src="bp-medcash.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of a phone wallet app with four stacked tier cards and healthcare icons around it.">
             <span class="badge"><i aria-hidden="true"></i>Employer-first B2B2C</span>
@@ -246,7 +277,7 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="cs-sbirt">
           <figure class="art">
             <img src="bp-sbirt.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of a hand holding a phone with a screening questionnaire, next to a three-step flow: screen, talk, refer.">
             <span class="badge"><i aria-hidden="true"></i>iMedicalApps pick of the week</span>
@@ -268,7 +299,7 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="cs-nysbirt">
           <figure class="art">
             <img src="bp-nysbirt.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of twelve clinic icons feeding streams of patients into a three-stage funnel and an analytics dashboard.">
             <span class="badge"><i aria-hidden="true"></i>12 sites · $10M SAMHSA program</span>
@@ -291,17 +322,19 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           </div>
         </article>
       </div>
+      <a class="bridge" href="#research"><span>Each result rests on research done first.</span><b>See the foundation ↓</b></a>
     </div>
   </section>
 
   <section class="research" id="research" aria-labelledby="research-h">
     <div class="wrap">
       <div class="section-head">
+        <p class="kicker">02 · The foundation</p>
         <h2 id="research-h">Research &amp; insights</h2>
-        <p>The clinical, customer, and data research behind the strategy work.</p>
+        <p>How patients, clinicians, and customers actually behave, measured before any strategy is set.</p>
       </div>
       <div class="cards">
-        <article class="card">
+        <article class="card" id="r-sts3">
           <figure><img src="bp-sts3.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of a clipboard and tablet questionnaire with a head in profile, a heartbeat line, three gauges and a hospital cross."></figure>
           <div class="body">
             <p class="tag">Built for clinicians</p>
@@ -317,7 +350,7 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" id="r-tpa8">
           <figure><img src="bp-tpa8.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of a tablet check-in form with eight rating rows, two gauges, and a circle of provider icons."></figure>
           <div class="body">
             <p class="tag">Voice of customer → measurement</p>
@@ -333,7 +366,7 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" id="r-hhk">
           <figure><img src="bp-hhk.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of a tablet with a video class and meal log, surrounded by drawings of a heart, kidneys, a plate, a salt shaker, a shoe and a calendar."></figure>
           <div class="body">
             <p class="tag">Digital engagement</p>
@@ -349,7 +382,7 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" id="r-seg">
           <figure><img src="bp-seg.webp" width="1200" height="900" loading="lazy" alt="Blueprint-style illustration of a scatter plot with four outlined clusters linked to four customer silhouettes and a stacked bar chart."></figure>
           <div class="body">
             <p class="tag">Segmentation</p>
@@ -366,25 +399,17 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
         </article>
       </div>
 
-      <div class="pubs">
-        <h3>Selected publications</h3>
-        <ul class="list">
-          <li><span>Psychiatry Research Communications</span><small>2025</small></li>
-          <li><a href="https://doi.org/10.1177/1178221820924026" target="_blank" rel="noopener">Substance Abuse: Research and Treatment</a><small>2020</small></li>
-          <li><a href="https://doi.org/10.1080/10550887.2019.1695512" target="_blank" rel="noopener">Journal of Addictive Diseases</a><small>2019</small></li>
-          <li><a href="https://doi.org/10.1055/s-0039-1684002" target="_blank" rel="noopener">ACI Open</a><small>2019</small></li>
-          <li><a href="https://doi.org/10.1371/journal.pone.0045157" target="_blank" rel="noopener">PLoS ONE</a><small>2012</small></li>
-        </ul>
-      </div>
+      <a class="bridge" href="#about"><span>Each layer built on the last.</span><b>See how it connects ↓</b></a>
     </div>
   </section>
 
   <section class="about" id="about" aria-labelledby="about-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="about-h">About</h2>
+        <p class="kicker">03 · The throughline</p>
+        <h2 id="about-h">How it connects</h2>
       </div>
-      <p class="intro">My background spans digital platforms, clinician-facing technology, human-led interventions, and multi-site healthcare programs. Each project built on the last:</p>
+      <p class="intro">My background spans digital platforms, clinician-facing technology, human-led interventions, and multi-site healthcare programs. Each step added a layer, from how people behave to how a product reaches its market:</p>
       <ol class="path">
         <li><b>Behavior</b><span>STS-3</span></li>
         <li><b>Patient measurement</b><span>TPA-8</span></li>
@@ -403,19 +428,73 @@ footer{background:var(--accent-soft);color:var(--muted);font-size:15px;padding-b
           <li><span>BA, Psychology</span><small>Eugene Lang College</small></li>
         </ul>
       </div>
+      <a class="bridge" href="#value"><span>Together, that becomes one way of working.</span><b>See what I bring ↓</b></a>
+    </div>
+  </section>
+
+  <section class="value" id="value" aria-labelledby="value-h">
+    <div class="wrap">
+      <p class="kicker">04 · The value</p>
+      <div class="uvp">
+        <div class="uvp-grid">
+          <div>
+            <h2 id="value-h">Clinical-grade evidence for commercial decisions.</h2>
+            <p>I find out how patients, clinicians, and buyers actually behave, then turn that evidence into what to build, what to say, and where to sell.</p>
+          </div>
+          <ul class="maps" aria-label="How the evidence is used">
+            <li><b>What to build</b><span>Product strategy</span></li>
+            <li><b>What to say</b><span>Marketing</span></li>
+            <li><b>Where to sell</b><span>Go-to-market</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <p class="pk">Product strategy</p>
+          <b class="big">94%</b><span class="bl">task completion on a clinician-facing app</span>
+          <p>Requirements grounded in real workflows and validated measures, so products get used.</p>
+          <ul class="proofs" aria-label="Proof"><li><a href="#cs-sbirt">SBIRT app</a></li><li><a href="#r-sts3">STS-3</a></li><li><a href="#r-tpa8">TPA-8</a></li></ul>
+        </article>
+        <article class="pillar">
+          <p class="pk">Marketing</p>
+          <b class="big">68</b><span class="bl">providers heard before one product was built</span>
+          <p>Segments, positioning, and messaging built from customer research, not assumptions.</p>
+          <ul class="proofs" aria-label="Proof"><li><a href="#r-tpa8">Value-based payment study</a></li><li><a href="#r-seg">Segmentation</a></li><li><a href="#cs-medcash">MedCASH</a></li></ul>
+        </article>
+        <article class="pillar">
+          <p class="pk">Go-to-market</p>
+          <b class="big">~7×</b><span class="bl">modeled LTV:CAC on the employer-first route</span>
+          <p>Route-to-market choices backed by channel economics and funnel data.</p>
+          <ul class="proofs" aria-label="Proof"><li><a href="#cs-medcash">MedCASH</a></li><li><a href="#cs-nysbirt">NYSBIRT II</a></li></ul>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="contact" id="contact" aria-labelledby="contact-h">
     <div class="wrap">
       <h2 id="contact-h">Let's talk</h2>
-      <p>Open to healthcare product strategy and research roles.</p>
+      <p>Need evidence behind your product, marketing, and GTM decisions? I'm open to healthcare product strategy and research roles.</p>
       <div class="row">
         <span class="email" id="emailVal">egilmer2007@gmail.com</span>
         <button class="btn primary sm" id="copyBtn" type="button">Copy email</button>
         <a class="btn sm" href="https://www.linkedin.com/in/gilmee02" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <p class="sr" id="copyStatus" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <section class="refs" aria-labelledby="pubs-h">
+    <div class="wrap">
+      <div class="pubs">
+        <h2 id="pubs-h">Selected publications</h2>
+        <ul class="list">
+          <li><span>Psychiatry Research Communications</span><small>2025</small></li>
+          <li><a href="https://doi.org/10.1177/1178221820924026" target="_blank" rel="noopener">Substance Abuse: Research and Treatment</a><small>2020</small></li>
+          <li><a href="https://doi.org/10.1080/10550887.2019.1695512" target="_blank" rel="noopener">Journal of Addictive Diseases</a><small>2019</small></li>
+          <li><a href="https://doi.org/10.1055/s-0039-1684002" target="_blank" rel="noopener">ACI Open</a><small>2019</small></li>
+          <li><a href="https://doi.org/10.1371/journal.pone.0045157" target="_blank" rel="noopener">PLoS ONE</a><small>2012</small></li>
+        </ul>
+      </div>
     </div>
   </section>
 </main>
